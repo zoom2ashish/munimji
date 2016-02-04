@@ -15,6 +15,7 @@
     let translation = require('./translation/translation');
     let flux = require('./flux');
 
+
     /// Define Angular Module
     angular.module(MODULE_NAME, [
       auth,

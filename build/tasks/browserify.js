@@ -50,7 +50,7 @@ gulp.task('browserify:app', function () {
 
     var libs = config.vendors.libs;
     libs.forEach(function(lib){
-        bundler.external(lib.require)
+        bundler.external(lib.expose ? lib.expose : lib.require)
     });
 
     return bundler

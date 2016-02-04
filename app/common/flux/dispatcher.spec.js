@@ -2,7 +2,7 @@
 'use strict';
 
 describe('Test common.flux.dispatcher:', function () {
-  var dispatcher= require('./dispatcher')();
+  var dispatcher = require('./dispatcher')();
 
   beforeEach(function () {
   });

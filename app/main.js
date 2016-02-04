@@ -15,13 +15,13 @@
 
   // Load External Libraries
   window.$ = window.jQuery = require('jquery');
-  require('bootstrap');
   window._ = require('underscore');
 
   // Load Angular
   let angular = window.angular = require('angular'); // That's right! We can just require angular as if we were in node
-  let uiRouter = require('angular-ui-router');
+  let ngAnimate = require('angular-animate');
   let ngSanitize = require('angular-sanitize');
+  let uiRouter = require('angular-ui-router');
 
   // Load Ionic
   require('ionic');
@@ -31,6 +31,7 @@
   // Load Application's modules
   let commonModule = require('./common');
   let configModule = require('./config');
+  let loginModule = require('./partials/login');
 
   let app = null;
 
@@ -39,11 +40,13 @@
     app = angular.module(APP_NAME);
   } catch (e) {
     app = angular.module(APP_NAME, [
-      uiRouter,
+      ngAnimate,
       ngSanitize,
+      uiRouter,
       ionic,
       commonModule,
-      configModule
+      configModule,
+      loginModule
     ]);
   }
 
@@ -54,4 +57,5 @@
       $translate.use('fr-FR');
     }, 3000);
   }]);
+
 })();

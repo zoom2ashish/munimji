@@ -5,38 +5,20 @@ var gulp = require('gulp'),
   requireDir = require('require-dir'),
   runSequence = require('run-sequence');
 
+config.basedir = __dirname;
+
 // Load All Gulp Tasks
 requireDir('./build/tasks', { recurse: true });
 
 // Dev task
-gulp.task('build:dev', function (done) {
+gulp.task('compile', function (done) {
   runSequence(['clean:dist'], [
     'styles',
     'lint',
     'browserify:vendor',
-    'browserify:dev'
+    'browserify:app'
   ], [
-    'copy-html',
-    'copy-images',
-    'copy-fonts',
-    'copy-config',
-    'copy-langs'
-  ], done);
-});
-
-
-// Dev task
-gulp.task('build:prod', function (done) {
-  runSequence(['clean:dist'], [
-    'styles',
-    'lint',
-    'browserify:prod'
-  ], [
-    'copy-html',
-    'copy-images',
-    'copy-fonts',
-    'copy-config',
-    'copy-langs'
+    'copy-static'
   ], done);
 });
 
@@ -50,16 +32,11 @@ gulp.task('unit', function (done) {
 });
 
 // Dev task
-gulp.task('dev', function (done) {
-  runSequence(['unit'], ['build:dev'], done);
-});
-
-// Dev task
-gulp.task('prod', function (done) {
-  runSequence(['unit'],['build:prod'], done);
+gulp.task('build', function (done) {
+  runSequence(['unit'], ['compile'], done);
 });
 
 // Default task
 gulp.task('default', function (done) {
-  runSequence('dev', 'watch');
+  runSequence('build', 'watch');
 });

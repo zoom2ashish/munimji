@@ -1,8 +1,9 @@
 {
-  "name": "munimG Web App",
+  "name": "munimG",
   "version": "0.0.1",
   "devDependencies": {
     "angular": "1.4.8",
+    "angular-animate": "^1.4.9",
     "angular-mocks": "^1.4.8",
     "angular-sanitize": "^1.4.8",
     "angular-translate": "^2.9.0",
@@ -19,7 +20,7 @@
     "brfs": "^1.4.1",
     "browserify": "^13.0.0",
     "browserify-istanbul": "^0.2.1",
-    "browserify-shim": "^3.8.11",
+    "browserify-shim": "^3.8.12",
     "connect-livereload": "~0.4.0",
     "del": "^2.2.0",
     "express": "~4.1.1",
@@ -31,6 +32,7 @@
     "gulp-jshint": "~1.5.5",
     "gulp-less": "^3.0.5",
     "gulp-livereload": "~2.1.0",
+    "gulp-sass": "^2.1.1",
     "gulp-uglify": "^1.5.1",
     "gulp-util": "~2.2.14",
     "jasmine-core": "^2.4.1",
@@ -43,6 +45,7 @@
     "karma-jasmine": "^0.3.6",
     "messageformat": "^0.2.2",
     "require-dir": "^0.3.0",
+    "resolve": "^1.1.7",
     "run-sequence": "^1.1.5",
     "underscore": "^1.8.3",
     "vinyl-buffer": "^1.0.0",
@@ -50,5 +53,21 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "browser": {
+    "ionic": "./libs/ionic/js/ionic.min.js",
+    "ionic-angular": "./libs/ionic/js/ionic-angular.min.js"
+  },
+  "browserify-shim": {},
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": [
+    "android"
+  ]
 }

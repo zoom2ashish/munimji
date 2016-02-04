@@ -30,17 +30,17 @@ gulp.task('watch', ['lint'], function () {
   refresh.listen(config.livereload.clientport);
 
   // Watch our scripts, and when they change run lint and browserify
-  gulp.watch(['app/**/*.js'], [ 'lint', 'browserify:dev']);
+  gulp.watch(['app/**/*.js'], [ 'lint', 'browserify:app']);
 
   // Watch our sass files
-  gulp.watch(['app/**/*.less'], ['styles']);
+  gulp.watch(['app/**/*.less', 'app/**/*.scss'], ['styles']);
 
   // Watch our sass files
-  gulp.watch(['app/config/*.json'], ['copy-config']);
+  gulp.watch(['app/**/*.json'], ['copy-static']);
 
   // Watch for html file change
-  gulp.watch(['app/**/*.html'], [ 'copy-html', 'browserify:dev' ]);
+  gulp.watch(['app/**/*.html'], [ 'copy-static', 'browserify:app' ]);
 
-  gulp.watch('./dist/**').on('change', refresh.changed);
+  gulp.watch(config.dirs.dist + '/**').on('change', refresh.changed);
 
 });

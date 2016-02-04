@@ -25,7 +25,7 @@
     };
 
     // Set up interceptor
-    $httpProvider.interceptors.push(interceptor);
+    $httpProvider.interceptors.push(['$q', '$location', '$rootScope', interceptor]);
   }
 
   HttpProviderConfig.$inject = ['$httpProvider'];

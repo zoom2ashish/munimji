@@ -6,28 +6,28 @@
 var config = require('./config');
 var istanbul = require('browserify-istanbul');
 var babelify = require("babelify");
+var resolve = require('resolve');
+
+console.log()
+var files = config.karma.files;
+console.log('Files' +  files);
+
+var filesToBrowserify = {};
+files.forEach(function(file){
+ filesToBrowserify[file] = ['browserify']
+});
 
 module.exports = function (karma) {
   karma.set({
     /**
     * Set app root folder as base folder
     */
-    basePath: '../',
+    basePath: config.basedir + '/',
 
     /**
     * List of files/patterns to load in the browser.
     */
-    files: [
-
-      // App specific code
-      'app/main.js',
-
-      // 3rd party resources
-      'node_modules/angular-mocks/angular-mocks.js',
-
-      // test files
-      'app/**/*.spec.js'
-    ],
+    files: files,
 
     /**
     * List Browsers To be Test
@@ -56,10 +56,7 @@ module.exports = function (karma) {
     /**
     * Provide testmodule Preprocessing configuration
     */
-    preprocessors: {
-      'app/main.js': ['browserify'],
-      'app/**/*.spec.js': ['browserify']
-    },
+    preprocessors: filesToBrowserify,
 
     /**
     * Provided Browserify configuraiton
@@ -75,11 +72,11 @@ module.exports = function (karma) {
       }),
       babelify.configure({
         ignore: [
-          '**/node_modules/**',
-          'app/**/*spec.js'
+          '**/node_modules/**'//, 'app/**/*spec.js'
         ],
         presets: ["es2015"]
-      })
+      }),
+      "browserify-shim"
       ]
     },
 
