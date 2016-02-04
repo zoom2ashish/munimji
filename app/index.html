@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="rxAnalytics">
+<head>
+  <title>IntelliSearch</title>
+  <link rel="stylesheet" href="assets/styles/styles.css" />
+</head>
+<body>
+
+<h1>{{ "HEADING" | translate }}</h1>
+  <!--- Primary views will be loaded here based on the current state-->
+  <div style="height:100%;width:100%"class="container-fluid" ui-view></div>
+
+
+
+  <!-- Load the main script -->
+  <script src="./vendor.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
