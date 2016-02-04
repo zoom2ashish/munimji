@@ -11,7 +11,7 @@
 
   'use strict';
 
-  const APP_NAME = 'rxAnalytics';
+  const APP_NAME = 'mgApp';
 
   // Load External Libraries
   window.$ = window.jQuery = require('jquery');

@@ -9,10 +9,10 @@
 	</parent-->
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.philips.hc.eici.analytics</groupId>
+	<groupId>myapp.munimji</groupId>
 	<version>1.0-SNAPSHOT</version>
 	<artifactId>webapp</artifactId>
-    <name>Web application for Search UI</name>
+    <name>Web application for Receipt Mgt</name>
 
 
 </project>

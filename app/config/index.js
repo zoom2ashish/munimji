@@ -7,7 +7,7 @@
 (function(){
     'use strict';
 
-    const MODULE_NAME = 'rxApp.config';
+    const MODULE_NAME = 'mgApp.config';
 
     // Declare Angular Module
     angular.module(MODULE_NAME, []);

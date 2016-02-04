@@ -4,7 +4,7 @@
 describe('main.spec test:', function () {
 
   beforeEach(function () {
-    angular.mock.module('IntelliSearch');
+    angular.mock.module('mgApp');
 
     // Inject dependenceis
     //SearchResultItemModel
