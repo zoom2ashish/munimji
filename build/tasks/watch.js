@@ -19,7 +19,7 @@ server.use(livereload({ port: livereloadport }));
 server.use(express.static(config.dirs.dist));
 // Because I like HTML5 pushstate .. this redirects everything back to our index.html
 server.all('/*', function (req, res) {
-  res.sendfile('index.html', { root: 'dist' });
+  res.sendfile('index.html', { root: 'www' });
 });
 
 // Watch Task for changes and reload

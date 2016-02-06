@@ -32,6 +32,7 @@
   let commonModule = require('./common');
   let configModule = require('./config');
   let loginModule = require('./partials/login');
+  let homeModule = require('./partials/home');
 
   let app = null;
 
@@ -46,16 +47,8 @@
       ionic,
       commonModule,
       configModule,
-      loginModule
+      loginModule,
+      homeModule
     ]);
   }
-
-  app.run(['$translate', '$translatePartialLoader', function($translate, $translatePartialLoader){
-    $translatePartialLoader.addPart('main');
-
-    setTimeout(function(){
-      $translate.use('fr-FR');
-    }, 3000);
-  }]);
-
 })();

@@ -6,9 +6,13 @@ var loginRouteConfig = function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('login', {
       url: '/login',
-      template: fs.readFileSync(__dirname + '/login.template.html'),
-      controller: 'LoginController',
-      controllerAs: 'vm'
+      views: {
+        'main': {
+          template: fs.readFileSync(__dirname + '/login.tpl.html'),
+          controller: 'LoginController',
+          controllerAs: 'vm'
+        }
+      }
     })
 
     $urlRouterProvider.otherwise('/login');

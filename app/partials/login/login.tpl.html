@@ -1,17 +1,25 @@
 <ion-view view-title="{{vm.title}}">
+    <!--
+  The nav bar that will be updated as we navigate between views.
+-->
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
     <ion-content>
         <div class="list">
             <label class="item item-input">
                 <span class="input-label">Username</span>
-                <input type="text" ng-model="user.username">
+                <input type="text" ng-model="vm.user.username">
             </label>
             <label class="item item-input">
                 <span class="input-label">Password</span>
-                <input type="password" ng-model="user.password">
+                <input type="password" ng-model="vm.user.password">
             </label>
         </div>
         <div class="padding">
-            <button class="button button-block button-positive" ng-click="signIn(user)">
+            <button class="button button-block button-positive" ng-click="vm.signIn(user)">
                 Sign-In
             </button>
             <p class="text-center">

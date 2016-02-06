@@ -1,0 +1,25 @@
+<ion-view>
+    <!--
+  The nav bar that will be updated as we navigate between views.
+-->
+    <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+
+
+    <ion-tabs class="tabs-icon-top tabs-positive">
+
+        <ion-tab title="{{'RECENT_TAB' | translate}}" icon="ion-ios-list-outline" ui-sref="home.recent">
+            <ion-nav-view name="recent-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="{{'HISTORY_TAB' | translate}}" icon="ion-ios-information" ui-sref="home.history">
+            <ion-nav-view name="history-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="{{ 'ADD_RECEIPT_TAB' | translate }}" icon="ion-plus-circled" ui-sref="home.addreceipt">
+            <ion-nav-view name="addreceipt-tab"></ion-nav-view>
+        </ion-tab>
+
+    </ion-tabs>
+</ion-view>

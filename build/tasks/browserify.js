@@ -38,7 +38,7 @@ gulp.task('browserify:vendor', function(){
         })
         .pipe(source('vendor.js'))
         .pipe(buffer())
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(config.dirs.dist));
 
     return stream;
@@ -63,6 +63,6 @@ gulp.task('browserify:app', function () {
         .bundle()
         .pipe(source('main.js'))
         .pipe(buffer())
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(config.dirs.dist))
 });
